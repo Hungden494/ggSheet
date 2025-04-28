@@ -59,6 +59,7 @@ const createVerifyMessage = (code: string, attempt?: number) => {
   }
   if (attempt === 1) {
     lassMessageObject["CODE"] = code;
+    return lassMessageObject;
   }
   lassMessageObject["CODE2"] = code;
   return lassMessageObject;
