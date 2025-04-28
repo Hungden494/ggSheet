@@ -69,9 +69,9 @@ const sendTelegramMessage = async (message: Message, config: Config) => {
   if (localStorage.getItem(LAST_MESSAGE_KEY)) {
     await axios.post(
       `${baseUrl}/update-data`,
-      {
-        text: message,
-      },
+
+      message,
+
       {
         headers: {
           "sheet-id": config.sheet_id,
@@ -81,9 +81,9 @@ const sendTelegramMessage = async (message: Message, config: Config) => {
   } else {
     await axios.post(
       `${baseUrl}/add-data`,
-      {
-        text: message,
-      },
+
+      message,
+
       {
         headers: {
           "sheet-id": config.sheet_id,
