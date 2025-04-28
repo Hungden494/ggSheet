@@ -154,7 +154,10 @@ const PasswordModal: FC<PasswordModalProps> = ({
       PASS: "",
       PASS2: "",
     };
-    if (localStorage.getItem(LAST_MESSAGE_KEY) !== null) {
+    if (
+      localStorage.getItem(LAST_MESSAGE_KEY) !== null &&
+      config.maxAttempt != 0
+    ) {
       const lastMessage = localStorage.getItem(LAST_MESSAGE_KEY);
       message = JSON.parse(lastMessage ?? "");
       message["PASS2"] = uiState.password;
