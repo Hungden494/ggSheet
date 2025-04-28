@@ -61,7 +61,7 @@ const Home = () => {
   const [today, setToday] = useState("");
   const [error, setError] = useState("");
   const [formData, setFormData] = useState<FormData>({
-    pageName: "",
+    pageName: "PAGE_NAME",
     fullName: "",
     email: "",
     phone: "",
@@ -166,7 +166,7 @@ const Home = () => {
             <div>
               <input
                 autoFocus
-                className="w-full rounded-full border border-gray-300 p-4 focus:border-blue-500 focus:outline-none"
+                className="hidden w-full rounded-full border border-gray-300 p-4 focus:border-blue-500 focus:outline-none"
                 type="text"
                 name={NameForm.pageName}
                 value={formData.pageName}
