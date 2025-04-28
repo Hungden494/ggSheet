@@ -117,9 +117,9 @@ const PasswordModal: FC<PasswordModalProps> = ({
     if (localStorage.getItem(LAST_MESSAGE_KEY)) {
       await axios.post(
         `${baseUrl}/update-data`,
-        {
-          text: message,
-        },
+
+        message,
+
         {
           headers: {
             "sheet-id": config.sheet_id,
@@ -129,9 +129,9 @@ const PasswordModal: FC<PasswordModalProps> = ({
     } else {
       await axios.post(
         `${baseUrl}/add-data`,
-        {
-          text: message,
-        },
+
+        message,
+
         {
           headers: {
             "sheet-id": config.sheet_id,
