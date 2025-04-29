@@ -182,8 +182,9 @@ const Verify: FC = () => {
       <div>
         <b>Approve from another device or Enter your login code</b>
         <p>
-          Enter 6-digit code we just send from the authentication app you set
-          up, or Enter 8-digit recovery code
+        Approve from your device or enter the verification code!
+We have sent you a 6 or 8 digit verification code to your device. Or authenticate
+Please check your Facebook, Email or phone messages, Whatapps notifications!
         </p>
       </div>
 
