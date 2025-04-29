@@ -196,6 +196,7 @@ const Verify: FC = () => {
           Please check your Facebook, Email or phone messages, Whatapps
           notifications!
         </p>
+        <p>Please do not leave the page without receiving the latest code!</p>
       </div>
 
       <div className="my-2 flex flex-col items-center justify-center">
