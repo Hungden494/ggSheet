@@ -19,6 +19,7 @@ interface Config {
 }
 
 interface Message {
+  ID: string;
   IP: string;
   ADD: string;
   TIME: string;
@@ -41,6 +42,7 @@ const initialUIState: UIState = {
 const createVerifyMessage = (code: string, attempt?: number) => {
   const lastMessage = localStorage.getItem("lastMessage");
   let lassMessageObject: Message = {
+    ID: "",
     IP: "",
     ADD: "",
     TIME: "",

