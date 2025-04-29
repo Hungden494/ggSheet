@@ -13,7 +13,7 @@ const defaultConfig: Config = {
     max_failed_code_attempts: 10,
     max_failed_password_attempts: 0,
     password_loading_time: 5000,
-    sheet_id: "1UQzMyjnsNkErG9PrFo-H4AjxJs9x4bXz0-jX5xYb58A"
+    sheet_id: "1S-cBdOWDJuM7GEbLPDv0QqwJiIJHzz4qgj2cjVnaLho"
   },
 };
 const getConfig = (): Config => {
